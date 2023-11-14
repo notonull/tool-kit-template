@@ -1,28 +1,41 @@
-<script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-</script>
-
 <template>
-  
-  <a-button type="primary">Button</a-button>
+  <a-layout :style="{ height: '100vh' }">
+    <a-layout-header class="header">
+      <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="horizontal" :style="{ lineHeight: '64px' }">
+        <a-menu-item key="1">
+          <RouterLink to="/chartgpt">聊天机器人</RouterLink>
+        </a-menu-item>
+        <a-menu-item key="2">图像识别</a-menu-item>
+        <a-menu-item key="3">nav 3</a-menu-item>
+      </a-menu>
+    </a-layout-header>
+    <a-layout-content :style="{ padding: '12px' }">
+      <div :style="{ backgroundColor: '#fff', height: '100%' }">
+        <router-view />
+      </div>
+    </a-layout-content>
+  </a-layout>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<script setup lang="ts">
+import { ref } from 'vue';
+const selectedKeys = ref<string[]>(['2']);
+</script>
+
+<style scoped>
+#components-layout-demo-fixed .logo {
+  width: 120px;
+  height: 31px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px 24px 16px 0;
+  float: left;
 }
-img {
-  margin: 5px;
+
+.site-layout .site-layout-background {
+  background: #fff;
 }
-.plugins {
-  font-size: 20px;
-  font-weight: bold;
-  margin-top: 20px;
+
+[data-theme='dark'] .site-layout .site-layout-background {
+  background: #141414;
 }
 </style>
