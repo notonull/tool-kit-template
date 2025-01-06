@@ -2,7 +2,7 @@
   "name": "tool-kit",
   "private": true,
   "version": "0.0.1",
-  "author": "ronggeng.chen",
+  "author": "nottonull",
   "description": "This is a ToolKit application based on the Electron framework.",
   "main": "dist/electron/main/main.js",
   "scripts": {
